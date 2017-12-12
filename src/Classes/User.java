@@ -1,4 +1,4 @@
-package Classes;
+package classes;
 
 public class User {
     public int Id;
@@ -13,9 +13,6 @@ public class User {
 
     @Override
     public boolean equals(Object obj) {
-        if(Id == ((User)obj).Id && FirstName.equals(((User)obj).FirstName) && LastdName.equals (((User)obj).LastdName))
-            return true;
-        else
-            return false;
+            return (Id == ((User)obj).Id && FirstName.equals(((User)obj).FirstName) && LastdName.equals (((User)obj).LastdName));
     }
 }

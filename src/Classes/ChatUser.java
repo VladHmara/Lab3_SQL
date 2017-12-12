@@ -1,4 +1,4 @@
-package Classes;
+package classes;
 
 public class ChatUser {
     public  int Id;
@@ -13,9 +13,6 @@ public class ChatUser {
 
     @Override
     public boolean equals(Object obj) {
-        if(Id == ((ChatUser)obj).Id && ChatId == ((ChatUser)obj).ChatId && UserId == ((ChatUser)obj).UserId)
-            return true;
-        else
-            return false;
+            return (Id == ((ChatUser)obj).Id && ChatId == ((ChatUser)obj).ChatId && UserId == ((ChatUser)obj).UserId);
     }
 }

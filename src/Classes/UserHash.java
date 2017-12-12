@@ -1,4 +1,4 @@
-package Classes;
+package classes;
 
 public class UserHash {
     public String Hash;
@@ -11,9 +11,6 @@ public class UserHash {
 
     @Override
     public boolean equals(Object obj) {
-        if(Hash.equals(((UserHash)obj).Hash)&& UserId == ((UserHash)obj).UserId)
-            return true;
-        else
-            return false;
+        return (Hash.equals(((UserHash)obj).Hash)&& UserId == ((UserHash)obj).UserId);
     }
 }
