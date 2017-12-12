@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        logicalFilePath="3.1_SerRow.xml">
+    <changeSet id="SetRow" author="VH">
+        <sql>
+            INSERT INTO "user" (id, first_name, last_name)
+            VALUES ('5','Alex','Bearer');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        logicalFilePath="2.0_DropTables.xml">
+    <changeSet id="DropTables" author="VH">
+        <sql>
+            DROP TABLE IF EXISTS public.user_hash;
+            DROP TABLE IF EXISTS public.chat_user;
+            DROP TABLE IF EXISTS public.message;
+            DROP TABLE IF EXISTS public."user";
+            DROP TABLE IF EXISTS public.chat;
+        </sql>
+    </changeSet>
+</databaseChangeLog>

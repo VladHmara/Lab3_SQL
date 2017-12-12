@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        logicalFilePath="3.0_SelectMessages.xml">
+    <changeSet id="SelectMessages" author="VH">
+        <sql>
+            SELECT "user".first_name, message."content"
+            FROM message INNER JOIN "user" ON message.from_user_id = "user".id
+            WHERE message.to_chat_id ='1';
+        </sql>
+    </changeSet>
+</databaseChangeLog>

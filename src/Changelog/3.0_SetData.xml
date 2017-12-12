@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        logicalFilePath="3.0_SetData.xml">
+    <changeSet id="SetData" author="VH">
+        <sql>
+            INSERT INTO chat (id, "name")
+            VALUES ('1', 'Chat1'),
+            ('2', 'Chat2'),
+            ('3', 'Chat3'),
+            ('4', 'Chat4'),
+            ('5', 'Chat5');
+
+            INSERT INTO "user" (id, first_name, last_name)
+            VALUES ('1','Alex','Pupkin'),
+            ('2','Bob','Kin'),
+            ('3','Ann','Trump'),
+            ('4','Oleg','Svorkin');
+
+            INSERT INTO user_hash(hash, user_id)
+            VALUES ('asddvfgj95q', 1),
+            ('ads235dfgh6', 2),
+            ('gfhrt41sdf1', 3),
+            ('asdsdfs3aew', 4);
+
+            INSERT INTO chat_user(id, chat_id, user_id)
+            VALUES ('1',1,1),
+            ('2',2,2),
+            ('3',3,3),
+            ('4',4,4),
+            ('5',5,1),
+            ('6',1,2),
+            ('7',2,3),
+            ('8',3,4),
+            ('9',4,1),
+            ('10',5,2);
+
+            INSERT INTO message(id, from_user_id, to_chat_id, "content")
+            VALUES ('1',1,1,'Hi'),
+            ('2',2,1,'Hello'),
+            ('3',1,2,'How r u'),
+            ('4',2,2,'Fine'),
+            ('5',1,1,'bb'),
+            ('6',2,1,'bye');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

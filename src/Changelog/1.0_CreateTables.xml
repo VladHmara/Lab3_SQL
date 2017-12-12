@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        logicalFilePath="1.0-create-tables.xml">
+    <changeSet id="CreateTables" author="VH">
+        <sql>
+            CREATE TABLE public.chat
+            (
+            id INT UNIQUE,
+            "name" CHARACTER VARYING(50) NOT NULL,
+            PRIMARY KEY (id)
+            );
+
+            CREATE TABLE public."user"
+            (
+            id INT UNIQUE,
+            first_name CHARACTER VARYING(50) NOT NULL,
+            last_name CHARACTER VARYING(50) NOT NULL,
+            PRIMARY KEY (id)
+            );
+
+            CREATE TABLE public.message
+            (
+            id INT UNIQUE,
+            from_user_id INT NOT NULL,
+            to_chat_id INT NOT NULL,
+            "content" CHARACTER VARYING(50) NOT NULL,
+            PRIMARY KEY (id),
+            FOREIGN KEY (from_user_id) REFERENCES "user"(id),
+            FOREIGN KEY (to_chat_id) REFERENCES chat(id)
+            );
+
+            CREATE TABLE public.chat_user
+            (
+            id INT UNIQUE,
+            chat_id INT NOT NULL,
+            user_id INT NOT NULL,
+            PRIMARY KEY (id),
+            FOREIGN KEY (chat_id) REFERENCES chat(id),
+            FOREIGN KEY (user_id) REFERENCES "user"(id)
+            );
+
+            CREATE TABLE public.user_hash
+            (
+            hash CHARACTER VARYING(50) NOT NULL,
+            user_id INT NOT NULL,
+            PRIMARY KEY (hash),
+            FOREIGN KEY (user_id) REFERENCES "user"(id)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
