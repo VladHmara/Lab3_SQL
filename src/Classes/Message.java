@@ -1,3 +1,5 @@
+package Classes;
+
 public class Message {
     public int Id;
     public int FromUserId;

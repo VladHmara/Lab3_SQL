@@ -1,3 +1,5 @@
+package Classes;
+
 public class UserHash {
     public String Hash;
     public int UserId;

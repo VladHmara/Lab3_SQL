@@ -1,3 +1,5 @@
+package Classes;
+
 public class Chat {
     public int Id;
     public String Name;

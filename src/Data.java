@@ -19,9 +19,7 @@ public class Data {
     public List<ChatUser> getChatUserList() {
         return ChatUserList;
     }
-    public List<Message> getMessageList() {
-        return MessageList;
-    }
+    public List<Message> getMessageList() { return MessageList;    }
     public List<User> getUserList() {
         return UserList;
     }

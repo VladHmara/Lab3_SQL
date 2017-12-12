@@ -133,74 +133,74 @@ public class Tests {
         Main.updateChangelog("3.0");
         Data data = new Data();
         Chat chat = new Chat(1,"Chat1");
-        assertEquals(true,data.ChatList.get(0).equals(chat));
+        assertEquals(true,data.getChatList().get(0).equals(chat));
     }
     @Test
     public void v2setDataTest2() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("3.0");
         Data data = new Data();
         User user = new User(1,"Alex","Pupkin");
-        assertEquals(true,data.UserList.get(0).equals(user));
+        assertEquals(true,data.getUserList().get(0).equals(user));
     }
     @Test
     public void v2setDataTest3() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("3.0");
         Data data = new Data();
         UserHash userHash = new UserHash("asddvfgj95q",1);
-        System.out.println(data.UserHashList.get(0).Hash + " " + data.UserHashList.get(0).UserId);
-        assertEquals(true,data.UserHashList.get(0).equals(userHash));
+        System.out.println(data.getUserHashList().get(0).Hash + " " + data.getUserHashList().get(0).UserId);
+        assertEquals(true,data.getUserHashList().get(0).equals(userHash));
       }
     @Test
     public void v2setDataTest4() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("3.0");
         Data data = new Data();
         ChatUser chatUser = new ChatUser(1,1,1);
-        assertEquals(true,data.ChatUserList.get(0).equals(chatUser));
+        assertEquals(true,data.getChatUserList().get(0).equals(chatUser));
       }
     @Test
     public void v2setRowTest() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("3.1");
         Data data = new Data();
         User user = new User(5,"Alex","Bearer");
-        assertEquals(true,data.UserList.get(4).equals(user));
+        assertEquals(true,data.getUserList().get(4).equals(user));
     }
     @Test
     public void v2updateRowTest() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("3.2");
         Data data = new Data();
         UserHash userHash = new UserHash("gfhrt41saaa",3);
-        assertEquals(true,data.UserHashList.get(3).equals(userHash));
+        assertEquals(true,data.getUserHashList().get(3).equals(userHash));
     }
 
     @Test
     public void v4RemoveAllRowsTest1() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("5.0");
         Data data = new Data();
-        assertEquals(0,data.ChatList.size());
+        assertEquals(0,data.getChatList().size());
     }
     @Test
     public void v4RemoveAllRowsTest2() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("5.0");
         Data data = new Data();
-        assertEquals(0,data.ChatUserList.size());
+        assertEquals(0,data.getChatUserList().size());
     }
     @Test
     public void v4RemoveAllRowsTest3() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("5.0");
         Data data = new Data();
-        assertEquals(0,data.MessageList.size());
+        assertEquals(0,data.getMessageList().size());
     }
     @Test
     public void v4RemoveAllRowsTest4() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("5.0");
         Data data = new Data();
-        assertEquals(0,data.UserList.size());
+        assertEquals(0,data.getUserList().size());
     }
     @Test
     public void v4RemoveAllRowsTest5() throws SQLException, LiquibaseException, ClassNotFoundException{//переписать
         Main.updateChangelog("5.0");
         Data data = new Data();
-        assertEquals(0,data.UserHashList.size());
+        assertEquals(0,data.getUserHashList().size());
     }
 
     @Test
