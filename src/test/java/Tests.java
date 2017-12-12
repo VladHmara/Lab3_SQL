@@ -23,7 +23,7 @@ public class Tests {
     public static void beforeClass()throws SQLException{
         MyConnection.connect();
         Statement stmt = MyConnection.connection.createStatement();
-        String sql = "DELETE FROM public.databasechangelog; DROP TABLE user_copy;";
+        String sql = "DELETE FROM public.databasechangelog; DROP TABLE IF EXISTS user_copy;";
         stmt.execute(sql);
     }
     @AfterClass
