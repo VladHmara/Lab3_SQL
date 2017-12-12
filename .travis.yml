@@ -3,13 +3,20 @@ language: java
 jdk:
   - oraclejdk8
 
-sudo: required
+install:
+  - gradle assemble
 
+env:
+  - CODACY_PROJECT_TOKEN=7afdc2a8c38b41aab4894c1d5332ffbe 
 before_install:
-  - chmod +x gradlew
-
-script:
-  - ./gradlew clean build -i --continue
+  - sudo apt-get install jq
+  - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
 
 after_success:
-  - ./gradlew test jacocoTestReport coveralls
+  - java -cp ~/codacy-coverage-reporter-assembly-latest.jar com.codacy.CodacyCoverageReporter -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
+
+services:
+  - postgresql
+  
+script:
+  - test \src\Tests.java
