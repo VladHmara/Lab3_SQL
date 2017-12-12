@@ -1,5 +1,3 @@
-package Classes;
-
 public class User {
     public int Id;
     public String FirstName;

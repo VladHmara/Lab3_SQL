@@ -1,7 +1,3 @@
-package Classes;
-
-import java.sql.Connection;
-
 public class Message {
     public int Id;
     public int FromUserId;

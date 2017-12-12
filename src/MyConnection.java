@@ -7,9 +7,9 @@ public class MyConnection {
 
     public static Connection connection;
 
-    static String userName = "postgres";
-    static String password = "password";
-    static String url = "jdbc:postgresql://localhost:5432/postgres";
+    static private String userName;
+    static private String password;
+    static private String url;
 
     public static void connect() {
         try(BufferedReader br = new BufferedReader (new FileReader("D:\\Education2017\\СУБД\\lab3\\src\\DB_LoginPassword.txt"))) {

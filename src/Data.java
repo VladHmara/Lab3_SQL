@@ -1,6 +1,5 @@
 import Classes.*;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 import java.util.ArrayList;
 import java.sql.ResultSet;
@@ -8,21 +7,37 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Data {
-    List<Chat> ChatList = new ArrayList<Chat>();
-    List<ChatUser> ChatUserList = new ArrayList<ChatUser>();
-    List<Message> MessageList = new ArrayList<Message>();
-    List<User> UserList = new ArrayList<User>();
-    List<UserHash> UserHashList = new ArrayList<UserHash>();
+    private List<Chat> ChatList = new ArrayList<Chat>();
+    private List<ChatUser> ChatUserList = new ArrayList<ChatUser>();
+    private List<Message> MessageList = new ArrayList<Message>();
+    private List<User> UserList = new ArrayList<User>();
+    private List<UserHash> UserHashList = new ArrayList<UserHash>();
 
-    public Data() throws SQLException{
-        GetChat();
-        GetChatUser();
-        GetMessage();
-        GetUser();
-        GetUserHash();
+    public List<Chat> getChatList() {
+        return ChatList;
+    }
+    public List<ChatUser> getChatUserList() {
+        return ChatUserList;
+    }
+    public List<Message> getMessageList() {
+        return MessageList;
+    }
+    public List<User> getUserList() {
+        return UserList;
+    }
+    public List<UserHash> getUserHashList() {
+        return UserHashList;
     }
 
-    private void GetChat() throws SQLException{
+    public Data() throws SQLException{
+        getChat();
+        getChatUser();
+        getMessage();
+        getUser();
+        getUserHash();
+    }
+
+    private void getChat() throws SQLException{
         Statement stmt = MyConnection.connection.createStatement();
         String sql = "SELECT * FROM Chat";
         ResultSet result = stmt.executeQuery(sql);
@@ -31,7 +46,7 @@ public class Data {
             ChatList.add(chat);
         }
     }
-    private void GetChatUser() throws SQLException{
+    private void getChatUser() throws SQLException{
         Statement stmt = MyConnection.connection.createStatement();
         String sql = "SELECT * FROM chat_user";
         ResultSet result = stmt.executeQuery(sql);
@@ -40,7 +55,7 @@ public class Data {
             ChatUserList.add(chatUser);
         }
     }
-    private void GetMessage() throws SQLException{
+    private void getMessage() throws SQLException{
         Statement stmt = MyConnection.connection.createStatement();
         String sql = "SELECT * FROM message";
         ResultSet result = stmt.executeQuery(sql);
@@ -49,7 +64,7 @@ public class Data {
             MessageList.add(message);
         }
     }
-    private void GetUser() throws SQLException{
+    private void getUser() throws SQLException{
         Statement stmt = MyConnection.connection.createStatement();
         String sql = "SELECT * FROM \"user\"";
         ResultSet result = stmt.executeQuery(sql);
@@ -58,7 +73,7 @@ public class Data {
             UserList.add(user);
         }
     }
-    private void GetUserHash() throws SQLException{
+    private void getUserHash() throws SQLException{
         Statement stmt = MyConnection.connection.createStatement();
         String sql = "SELECT * FROM user_hash";
         ResultSet result = stmt.executeQuery(sql);

@@ -20,13 +20,13 @@ public class Main {
         String sql = "DELETE FROM public.databasechangelog;";
         stmt.execute(sql);
 
-        UpdateChangelog("2.0","1.0","3.0");
+        updateChangelog("2.0","1.0","3.0");
 
         MyConnection.disconnect();
     }
 
 
-    public static void UpdateChangelog(String versionOfChangelog) throws LiquibaseException {
+    public static void updateChangelog(String versionOfChangelog) throws LiquibaseException {
         Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(MyConnection.connection));
         for (File f:new File("src/Changelog").listFiles()) {
             if(f.getName().contains(versionOfChangelog))
@@ -38,9 +38,9 @@ public class Main {
         }
     }
 
-    public static void UpdateChangelog(String ... versionOfChangelog) throws LiquibaseException {
+    public static void updateChangelog(String ... versionOfChangelog) throws LiquibaseException {
         for (String version : versionOfChangelog)
-                UpdateChangelog(version);
+                updateChangelog(version);
     }
 
 }
