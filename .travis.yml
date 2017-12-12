@@ -7,7 +7,7 @@ install:
   - gradle assemble
 
 env:
-  - CODACY_PROJECT_TOKEN=7afdc2a8c38b41aab4894c1d5332ffbe 
+  - CODACY_PROJECT_TOKEN=9c6144da20d44fd28bd84e0b204680d5
 before_install:
   - sudo apt-get install jq
   - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
