@@ -2,4 +2,3 @@ DB_LoginPassword.txt
 out/
 .idea/
 .gradle/
-gradle.properties
