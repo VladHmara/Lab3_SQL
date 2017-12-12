@@ -1,27 +1,37 @@
+plugins {
+    id "groovy"
+    id "maven"
+    id "idea"
+    id "signing"
+    id "maven-publish"
+    id "jacoco"
+    id "com.jfrog.bintray" version "1.4"
+    id "com.github.kt3k.coveralls" version "2.5.0"
+}
+
 group 'lab3_SQL'
-version '1.0-SNAPSHOT'
+version '2.8.2'
 
-apply plugin: 'java'
-apply plugin: 'liquibase'
+repositories {
+    mavenCentral()
+}
 
-sourceCompatibility = 1.8
-
-buildscript {
-
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath "org.junit.platform:junit-platform-gradle-plugin:1.0.1"
-        classpath "org.liquibase:liquibase-core:3.4.1"
-        classpath ("org.liquibase:liquibase-gradle-plugin:1.1.1") {
-            exclude(module: 'liquibase-core')   // exclude the dependency on liquibase-core:3.3.5
-        }
-        classpath "org.postgresql:postgresql:42.1.4"
-    }
+configurations {
+    liquibase
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'junit:junit:4.12'
+    compile 'org.liquibase:liquibase-gradle-plugin:1.1.1'
+    liquibase 'org.liquibase:liquibase-core:3.2.2'
+    compile group: 'org.liquibase', name: 'liquibase-gradle-plugin', version: '1.2.4'
+
+    testCompile 'org.mockito:mockito-all:1.9.5'
+    testCompile 'com.github.tomakehurst:wiremock:1.18'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
 }
