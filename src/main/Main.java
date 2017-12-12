@@ -1,4 +1,5 @@
-import liquibase.*;
+package main;
+
 import liquibase.Contexts;
 import liquibase.LabelExpression;
 import liquibase.Liquibase;
