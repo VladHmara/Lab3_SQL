@@ -1,4 +1,4 @@
-package main;
+package run;
 
 import liquibase.Contexts;
 import liquibase.LabelExpression;

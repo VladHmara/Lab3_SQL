@@ -1,6 +1,6 @@
-package main;
+package run;
 
-import classes.*;
+import items.*;
 
 import java.util.List;
 import java.util.ArrayList;

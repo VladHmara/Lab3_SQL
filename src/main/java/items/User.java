@@ -1,4 +1,4 @@
-package classes;
+package items;
 
 public class User {
     public int Id;

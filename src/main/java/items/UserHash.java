@@ -1,4 +1,4 @@
-package classes;
+package items;
 
 public class UserHash {
     public String Hash;

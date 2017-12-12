@@ -1,4 +1,4 @@
-package classes;
+package items;
 
 public class Message {
     public int Id;

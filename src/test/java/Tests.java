@@ -4,8 +4,8 @@ import org.junit.*;
 import org.junit.runners.MethodSorters;
 import liquibase.exception.LiquibaseException;
 
-import classes.*;
-import main.*;
+import items.*;
+import run.*;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;

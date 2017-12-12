@@ -1,4 +1,4 @@
-package classes;
+package items;
 
 public class ChatUser {
     public  int Id;
