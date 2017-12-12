@@ -25,9 +25,3 @@ buildscript {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-    }
-}
