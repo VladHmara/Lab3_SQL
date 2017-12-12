@@ -9,16 +9,16 @@ public class MyConnection {
 
     public static Connection connection;
 
-    static private String userName;
-    static private String password;
-    static private String url;
+    static private String userName = "postgres";
+    static private String password = "password";
+    static private String url = "jdbc:postgresql://localhost:5432/postgres";
 
     public static void connect() {
         try(BufferedReader br = new BufferedReader (new FileReader("D:\\Education2017\\СУБД\\lab3\\src\\DB_LoginPassword.txt"))) {
             String ConnectionData = br.readLine();
-            userName = ConnectionData.split(" ")[0];
-            password = ConnectionData.split(" ")[1];
-            url = ConnectionData.split(" ")[2];
+            //userName = ConnectionData.split(" ")[0];
+            //password = ConnectionData.split(" ")[1];
+            //url = ConnectionData.split(" ")[2];
         }
         catch(IOException ex){
             System.out.println(ex.getMessage());
