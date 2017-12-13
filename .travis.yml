@@ -3,9 +3,6 @@ language: java
 jdk:
   - oraclejdk8
 
-env:
-  - CODACY_PROJECT_TOKEN = "9c6144da20d44fd28bd84e0b204680d5"
-
 sudo: required
 
 before_install:
