@@ -1,4 +1,4 @@
-package run;
+package main.java.run;
 
 import liquibase.Contexts;
 import liquibase.LabelExpression;
@@ -18,7 +18,7 @@ public class Main {
         MyConnection.connect();
 
         Statement stmt = MyConnection.connection.createStatement();
-        String sql = "DELETE FROM public.databasechangelog;";
+        String sql = "DROP TABLE IF EXISTS public.databasechangelog;";
         stmt.execute(sql);
 
         updateChangelog("2.0","1.0","3.0");

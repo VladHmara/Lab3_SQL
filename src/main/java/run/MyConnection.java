@@ -1,4 +1,4 @@
-package run;
+package main.java.run;
 
 import java.sql.*;
 import java.sql.DriverManager;

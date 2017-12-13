@@ -1,4 +1,4 @@
-package items;
+package main.java.items;
 
 public class User {
     public int Id;

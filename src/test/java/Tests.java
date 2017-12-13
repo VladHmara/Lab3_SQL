@@ -4,8 +4,8 @@ import org.junit.*;
 import org.junit.runners.MethodSorters;
 import liquibase.exception.LiquibaseException;
 
-import items.*;
-import run.*;
+import main.java.items.*;
+import main.java.run.*;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;
@@ -23,7 +23,7 @@ public class Tests {
     public static void beforeClass()throws SQLException{
         MyConnection.connect();
         Statement stmt = MyConnection.connection.createStatement();
-        String sql = "DELETE FROM public.databasechangelog; DROP TABLE IF EXISTS user_copy;";
+        String sql = "DROP TABLE IF EXISTS public.databasechangelog; DROP TABLE IF EXISTS user_copy;";
         stmt.execute(sql);
     }
     @AfterClass

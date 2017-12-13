@@ -1,4 +1,4 @@
-package items;
+package main.java.items;
 
 public class Chat {
     public int Id;
