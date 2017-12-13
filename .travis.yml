@@ -9,13 +9,12 @@ env:
   - CODACY_PROJECT_TOKEN=9c6144da20d44fd28bd84e0b204680d5
 
 before_install:
-  - chmod +x gradlew
   - sudo apt-get install jq
   - wget -O ~/codacy-coverage-reporter-assembly-latest.jar $(curl https://api.github.com/repos/codacy/codacy-coverage-reporter/releases/latest | jq -r .assets[0].browser_download_url)
 
 
 script:
-  - ./gradlew clean build -i --continue
+  - test \lab3_SQL\src\test\java\Tests.java
 
 after_success:
   - java -cp ~/codacy-coverage-reporter-assembly-latest.jar com.codacy.CodacyCoverageReporter -l Java -r build/reports/jacoco/test/jacocoTestReport.xml
