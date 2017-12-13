@@ -29,7 +29,6 @@ public class Main {
 
     public static void updateChangelog(String versionOfChangelog) throws LiquibaseException {
         Database database = DatabaseFactory.getInstance().findCorrectDatabaseImplementation(new JdbcConnection(MyConnection.connection));
-        if(File.e)
         for (File f:new File("resources/liquibase").listFiles()) {
             if(f.getName().contains(versionOfChangelog))
             {
