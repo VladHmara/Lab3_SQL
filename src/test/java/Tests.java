@@ -150,7 +150,6 @@ public class Tests {
         Main.updateChangelog("3.0");
         Data d = new Data();
         UserHash userHash = new UserHash("asddvfgj95q",1);
-        System.out.println(d.getUserHashList().get(0).Hash + " " + d.getUserHashList().get(0).UserId);
         assertEquals(true,d.getUserHashList().get(0).equals(userHash));
       }
     @Test
