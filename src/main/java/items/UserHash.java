@@ -1,4 +1,5 @@
-package main.java.items;
+package items;
+
 
 public class UserHash {
     public String Hash;

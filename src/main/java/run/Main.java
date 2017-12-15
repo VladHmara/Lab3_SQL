@@ -1,4 +1,4 @@
-package main.java.run;
+package run;
 
 import liquibase.Contexts;
 import liquibase.LabelExpression;

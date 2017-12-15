@@ -1,4 +1,4 @@
-package main.java.items;
+package items;
 
 public class Chat {
     public int Id;
@@ -6,7 +6,7 @@ public class Chat {
 
     public Chat(int id, String name){
         Id = id;
-        Name= name;
+        Name = name;
     }
 
     @Override

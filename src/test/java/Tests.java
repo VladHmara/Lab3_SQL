@@ -1,11 +1,9 @@
-package test.java;
-
 import org.junit.*;
 import org.junit.runners.MethodSorters;
 import liquibase.exception.LiquibaseException;
 
-import main.java.items.*;
-import main.java.run.*;
+import items.*;
+import run.*;
 
 import java.sql.DatabaseMetaData;
 import java.sql.ResultSet;

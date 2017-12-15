@@ -1,6 +1,6 @@
-package main.java.run;
+package run;
 
-import main.java.items.*;
+import items.*;
 
 import java.util.List;
 import java.util.ArrayList;

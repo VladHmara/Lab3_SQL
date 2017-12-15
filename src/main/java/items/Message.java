@@ -1,4 +1,5 @@
-package main.java.items;
+package items;
+
 
 public class Message {
     public int Id;
