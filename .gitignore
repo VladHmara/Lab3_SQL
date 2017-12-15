@@ -2,3 +2,4 @@ DB_LoginPassword.txt
 out/
 .idea/
 .gradle/
+lib/
